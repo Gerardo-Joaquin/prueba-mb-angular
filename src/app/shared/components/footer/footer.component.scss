@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+.section {
+    margin-right: 60px;
+    span {
+        cursor: pointer;
+    }
+}
+.line {
+    height: 2px;
+
+    background: $primary-color;
+    width: 100%;
+}
+.cop {
+    color: gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.footer {
+    background: white;
+    width: 100%;
+    padding-top: 50px;
+}
+.icons-social {
+    i {
+        cursor: pointer;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+}

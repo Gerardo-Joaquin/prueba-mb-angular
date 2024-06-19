@@ -1,0 +1,147 @@
+<div class="container-fluid h-100">
+    <div class="row">
+        <div class="col-12 px-5 py-2" style="margin-top: 120px;">
+            <h2>Termina tu compra</h2>
+            <div class="title-header " [routerLink]="['/home/cart']" style="cursor: pointer; background:transparent;">
+                <i class="bi bi-arrow-left-circle mx-2"></i>
+                <span>Regresar al carrito</span>
+            </div>
+        </div>
+        <div class="col-12 px-5">
+            <div class="row">
+                <div class="col-xl-8 col-12">
+                    <div class="card px-4 py-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="title-card">Contacto</span>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Correo electrónico">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="phone" placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <span class="title-card">Datos para la entrega</span>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <div class="row justify-content-start align-items-center">
+                                    <div class="form-group col-6 mt-3">
+                                        <input type="text" class="form-control" id="Name" placeholder="Nombre">
+                                    </div>
+                                    <div class="form-group col-6 mt-3">
+                                        <input type="text" class="form-control" id="lastName" placeholder="Apellido">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="text" class="form-control" id="adress" placeholder="Número Calle">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="number" class="form-control" id="exterior"
+                                            placeholder="Número exterior">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="number" class="form-control" id="interior"
+                                            placeholder="Número interior">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="text" class="form-control" id="adress2" placeholder="Colonia">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="number" class="form-control" id="cp" placeholder="Código postal">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <input type="text" class="form-control" id="city" placeholder="Ciudad">
+                                    </div>
+                                    <div class="form-group col-4 mt-3">
+                                        <select name="" id="" class="form-select">
+                                            <option value="">Tamaulipas</option>
+                                            <option value="">Queretaro</option>
+                                            <option value="">Jalisco</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card px-4 py-5 mt-3">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <span class="title-card">Revisa tus artículos</span>
+                            </div>
+                            <div class="search-area">
+                                <div class="row align-items-center justify-content-center flex-column">
+                                    <h3 class="text-center mt-5" *ngIf="cartService.getCart().length == 0"> Agrega
+                                        productos a
+                                        tu
+                                        carrito</h3>
+                                    <div class="col-12  mb-2 mt-3 item" *ngFor="let item of cartService.getCart()">
+                                        <app-cart-product [item]="item"></app-cart-product>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-12 mt-xl-0 mt-4 d-flex align-items-center justify-content-start flex-column">
+                    <div class="title-header text-center">
+                        <span>Resumen de tu compra</span>
+                    </div>
+                    <div class="card w-100 mt-2">
+                        <div class="title-header mt-2">
+                            <span>Subtotal</span>
+                            <div class="px-1 d-flex align-items-center justify-content-between">
+                                <span>{{cartService.getCart().length}}</span>
+                                <span>{{cartService.getTotalPrice() | currency: 'MXN'}}</span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="line"></div>
+                        </div>
+                        <div class="title-header mt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>Envió</span>
+                                <span>{{250 | currency: 'MXN'}}</span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="line"></div>
+                        </div>
+                        <div class="title-header mt-2">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>TOTAL</span>
+                                <span>{{cartService.getTotalPrice() + 250 | currency: 'MXN'}}</span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="line"></div>
+                        </div>
+                        <div class="p-3">
+                            <span class="text-muted mb-1">todas las transacciones son seguras y encriptadas</span>
+                            <input type="text" class="form-control" placeholder="Titular de la tarjeta">
+                            <div class="row mt-3 px-2 justify-content-between align-items-center">
+                                <i class="bi bi-credit-card-2-front text-muted col-6"> Número de tarjeta</i>
+                                <img class="col-6" src="assets/images/payment.png" alt="" style="width: 120px;">
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <button class="btn btn-secondary mt-3 px-5 py-2"
+                                [routerLink]="['/home/payment']">Pagar</button>
+                        </div>
+                    </div>
+                    <div class="certify w-100 mt-3">
+                        <i class="bi bi-shield-fill-check"></i>
+                        <span>Compra 100% segura</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <app-footer></app-footer>
+    </div>
+</div>

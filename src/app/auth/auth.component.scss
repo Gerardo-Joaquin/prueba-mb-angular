@@ -1,0 +1,55 @@
+@import '../../styles.scss';
+
+.image {
+    width: 45vw;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.section {
+    margin-top: 90px;
+}
+
+.btn-primary {
+    width: 100%;
+    font-size: 22px;
+}
+
+.btn-secondary {
+    font-size: 13px;
+}
+
+.social {
+    width: 151px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    & i {
+        font-size: 23px;
+    }
+
+    &.apple {
+        background: black;
+
+        & i {
+            color: white;
+        }
+    }
+
+    &.fb {
+        background: $fb-color;
+
+        & i {
+            color: white;
+        }
+    }
+
+    &.google {
+        border: 1px solid gray;
+    }
+}

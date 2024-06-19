@@ -1,0 +1,21 @@
+<div class="item-product" (click)="addCartShopping()">
+    <div class="header-product">
+        <div class="code">SKU: {{item.sku}}</div>
+        <i class="bi bi-heart"></i>
+    </div>
+    <div class="image-product">
+        <img [src]="item.imagen" alt="">
+        <div class="star-product">
+            <i class="bi bi-star"></i>
+            <span>4.9</span>
+        </div>
+    </div>
+    <div class="title-product">
+        <h4>{{item.nombre | titlecase}}</h4>
+    </div>
+    <div class="price-product">
+        <span class="now-price" >
+            {{item.precio | currency:'MXN'}}
+        </span>
+    </div>
+</div>

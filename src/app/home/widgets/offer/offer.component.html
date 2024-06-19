@@ -1,0 +1,24 @@
+<div class="item-offer">
+    <div class="header-offer">
+        <div class="code">SKU: {{item.sku}}</div>
+        <i class="bi bi-heart"></i>
+    </div>
+    <div class="image-offer">
+        <img [src]="item.imagen" alt="">
+        <div class="star-offer">
+            <i class="bi bi-star"></i>
+            <span>4.9</span>
+        </div>
+    </div>
+    <div class="title-offer">
+        <h4>{{item.nombre | titlecase}}</h4>
+    </div>
+    <div class="price-offer">
+        <span class="bf-price" *ngIf="!product">
+            $ 1100
+        </span>
+        <span class="now-price" >
+            $ 1080
+        </span>
+    </div>
+</div>

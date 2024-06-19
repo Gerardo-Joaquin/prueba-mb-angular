@@ -1,0 +1,24 @@
+@import '../../../../styles.scss';
+
+.title-create {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 4px solid $primary-color;
+}
+.title-card {
+    font-size: 25px;
+}
+
+.section {
+    margin-top: 90px;
+}
+.btn-secondary {
+    padding: 14px 25px 14px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    &:hover {
+        background: black;
+        color: white;
+    }
+}

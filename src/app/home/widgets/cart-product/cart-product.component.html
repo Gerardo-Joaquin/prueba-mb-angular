@@ -1,0 +1,22 @@
+<div class="item-cart">
+    <img [src]="item.imagen" alt="" class="image">
+    <div class="description">
+        <p>{{item.nombre}}</p>
+        <div class=" w-100 d-flex align-items-center justify-content-between">
+            <span class="btn-flat" (click)="deleteCart()">ELIMINAR</span>
+            <i class="bi bi-heart" style="cursor: pointer;"></i>
+        </div>
+    </div>
+    <div class="product-count">
+        <div class="more">
+            <button class="btn btn-flat"><i class="bi bi-dash"></i></button>
+            <span>1</span>
+            <button class="btn btn-flat"><i class="bi bi-plus-lg"></i></button>
+        </div>
+        <span>10 disponibles</span>
+    </div>
+    <div class="current">
+        <span class="price">{{item.precio | currency:'MXN'}}</span>
+        <span class="text">sin cargo por envió</span>
+    </div>
+</div>

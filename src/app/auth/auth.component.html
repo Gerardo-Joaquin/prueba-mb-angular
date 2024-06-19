@@ -1,0 +1,73 @@
+<div class="container-fluid h-100">
+    <div class="row h-100 justiy-content-center align-items-center px-5">
+        <div class="col-6 d-lg-block d-none section">
+            <img src="assets/images/login-image.png" alt="" class="image">
+        </div>
+        <div class="col-lg-6 col-12 p-5 section">
+            <form [formGroup]="authForm" class="row align-items-start justify-content-center">
+                <div class="col-12">
+                    <h3>Inicia sesión</h3>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="form-group">
+                        <label for="user" class="form-label">Email o nombre de usuario</label>
+                        <div *ngIf="authForm.controls['username'].invalid && (authForm.controls['username'].dirty || authForm.controls['username'].touched)"
+                            class="alert alert-danger">
+                            <div>
+                                Email o nombre de usuario es necesario
+                            </div>
+                        </div>
+                        <input formControlName="username" id="user" class="form-control" type="email"
+                            placeholder="Email o nombre de usuario">
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="form-group">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <div *ngIf="authForm.controls['password'].invalid && (authForm.controls['password'].dirty || authForm.controls['password'].touched)"
+                            class="alert alert-danger">
+                            <div>
+                                la contraseña es necesaria
+                            </div>
+                        </div>
+                        <input formControlName="password" id="password" class="form-control" type="password"
+                            placeholder="Contraseña">
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Recordarme</label>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <button (click)="authenticate()" class="btn btn-primary" [disabled]="loadingService.getLoading()">
+                        <div *ngIf="loadingService.getLoading()" class="spinner-border small" style="width: 20px; height: 20px;" role="status"></div>
+                        INICIAR SESIÓN
+                    </button>
+                </div>
+                <div class="col-12">
+                    <span style="cursor: pointer;">¿Olvidaste tu contraseña?</span>
+                </div>
+                <div class="col-12 mt-5">
+                    <span>¿No tienes cuenta?</span>
+                    <div class="btn btn-secondary mx-2" [routerLink]="['/auth/create']">REGÍSTRATE</div>
+                </div>
+                <div class="col-12 mt-5">
+                    <span>Inicia sesión con tus redes sociales</span>
+                    <div class="d-flex mt-3 align-items-center justify-content-center">
+                        <div class="social google mx-2">
+                            <i class="bi bi-google"></i>
+                        </div>
+                        <div class="social fb mx-2">
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <div class="social apple mx-2">
+                            <i class="bi bi-apple"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

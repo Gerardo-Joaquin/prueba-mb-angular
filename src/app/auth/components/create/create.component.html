@@ -1,0 +1,92 @@
+<div class="containter-fluid p-5">
+    <div class="row justify-content-center align-items-center section">
+        <div class="col-lg-8 col-12">
+            <p class="title-create">Hola, te pedimos algunos datos para crear una cuenta de marca</p>
+        </div>
+        <div class="col-lg-8 col-12">
+            <form class="card p-4" [formGroup]="createForm">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="title-card">Información de la empresa</span>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row">
+                            <div class="form-group col-lg-4 col-12">
+                                <label for="comercial-name" class="form-label">Nombre Comercial</label>
+                                <input formControlName="nombre_comercial" type="text" class="form-control" id="comercial-name"
+                                    placeholder="Nombre Comercial">
+                            </div>
+
+                            <div class="form-group col-lg-4 col-12">
+                                <label for="comercial-phone" class="form-label">Teléfono de la empresa</label>
+                                <input formControlName="telefono_comercial" type="number" class="form-control" id="comercial-phone"
+                                    placeholder="Teléfono de la empresa">
+                            </div>
+                            <div class="form-group col-lg-4 col-12">
+                                <label for="csf" class="form-label">CSF</label>
+                                <button class="btn btn-primary w-100">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <span class="title-card">Información de la empresa</span>
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-start mt-3">
+                        <div class="form-group">
+                            <label for="comercial-name" class="form-label">Identificación Oficial</label>
+                            <button class="btn btn-primary w-100">Upload</button>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <span class="title-card">Dirección</span>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="form-group col-lg-6 col-12">
+                                <label for="adress" class="form-label">Calle</label>
+                                <input formControlName="calle" type="text" class="form-control" id="adress" placeholder="Calle">
+                            </div>
+                            <div class="form-group col-lg-6 col-12">
+                                <label for="exterior" class="form-label">Número exterior</label>
+                                <input formControlName="numero_exterior" type="number" class="form-control" id="exterior" placeholder="Numero exterior">
+                            </div>
+                            <div class="form-group col-lg-6 col-12 mt-2">
+                                <label for="interior" class="form-label">Número interior</label>
+                                <input formControlName="numero_interior" type="number" class="form-control" id="interior" placeholder="Número interior">
+                            </div>
+                            <div class="form-group col-lg-6 col-12 mt-2">
+                                <label for="adress" class="form-label">Colonia</label>
+                                <input formControlName="colonia" type="text" class="form-control" id="adress" placeholder="Colonia">
+                            </div>
+                            <div class="form-group col-lg-6 col-12 mt-2">
+                                <label for="cp" class="form-label">Código Postal</label>
+                                <input formControlName="cp" type="number" class="form-control" id="cp" placeholder="CP">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check-privacity">
+                            <label class="form-check-label" for="check-privacity">
+                                Acepto los términos y condiciones y autorizo el uso de mis datos de acuerdo a la Declaración de Privacidad
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkmail">
+                            <label class="form-check-label" for="checkmail">
+                                Acepto recibir información por correo
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <button class="btn btn-secondary" (click)="createUser()">
+                            Crear
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

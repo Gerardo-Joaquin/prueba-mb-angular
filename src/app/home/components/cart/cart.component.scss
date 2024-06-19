@@ -1,0 +1,54 @@
+@import '../../../../styles.scss';
+.filter {
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-fluid {
+    background: #F9F9FB;
+}
+
+.title-header {
+    background: white;
+    width: 100%;
+    padding:  20px;
+    border-radius: 5px;
+}
+.gird {
+    background: white;
+}
+
+.list-items {
+    .item {
+        margin-left: 10px;
+    }
+}
+
+.certify {
+    background: $primary-color;
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+    i {
+        margin-right: 5px;
+        
+    }
+}
+.items-cat {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    padding: 10px 40px 10px 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.search-area {
+    height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

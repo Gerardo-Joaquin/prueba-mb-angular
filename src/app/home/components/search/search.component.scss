@@ -1,0 +1,39 @@
+.filter {
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-fluid {
+    background: #F9F9FB;
+}
+
+.title-header {
+    background: white;
+    width: 100%;
+    padding:  20px;
+}
+.gird {
+    background: white;
+}
+
+.list-items {
+    .item {
+        margin-left: 10px;
+    }
+}
+
+.search-area {
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.filter-list {
+    height: 15vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

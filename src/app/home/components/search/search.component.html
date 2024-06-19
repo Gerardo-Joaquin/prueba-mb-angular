@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 p-5" style="margin-top: 90px;">
+            <h2>{{searchService.getSearchTerm()}}</h2>
+            <span>{{searchService.getSearchCount() | number}} resultados</span>
+        </div>
+        <div class="col-12 px-5">
+            <div class="row">
+                <div class="col-3">
+                    <div class="filter">
+                        <label class="form-check-label" for="check1">LLega mañana</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="check1" checked>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <label class="form-check-label" for="free">Envió gratis</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="free" checked>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <label class="form-check-label" for="all">Tiendas oficiales</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="all" checked>
+                        </div>
+                    </div>
+                    <div class="filter flex-column align-items-start ">
+                        <span class="mb-2"> Categorías:</span>
+                        <input type="text" class="form-control mb-3" placeholder="buscar categoría" (input)="changeCategory()" [(ngModel)]="termCategory">
+                        <div class="filter-list w-100">
+                            <div class="form-check" *ngFor="let item of categoriesTemp">
+                                <input (change)="addCategory($event, item)" class="form-check-input" type="checkbox" value="" id="{{item.nombre}}">
+                                <label class="form-check-label" for="{{item.nombre}}">
+                                    {{item.nombre}}
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="filter flex-column align-items-start ">
+                        <span class="mb-2"> Vehículos:</span>
+                        <input type="text" class="form-control mb-3" placeholder="buscar vehículo" (input)="changeVehicle()" [(ngModel)]="termVehicle">
+                        <div class="filter-list w-100">
+                            <div class="form-check" *ngFor="let item of vehiclesTemp">
+                                <input (change)="addVehicle($event, item)"  class="form-check-input" type="checkbox" value="" id="{{item.nombre}}">
+                                <label class="form-check-label" for="{{item.nombre}}">
+                                    {{item.nombre}}
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="title-header d-flex justify-content-start align-items-center">
+                        <span>Ordenar por:</span>
+                        <select (change)="changeFilterPrice($event)" [disabled]="searchService.getSearchResult().length == 0" id="" class="form-select w-25 mx-2">
+                            <option value="ma">Precio mayor</option>
+                            <option value="me">Precio menor</option>
+                        </select>
+                    </div>
+                    <div class="search-area">
+                        <div class="row align-items-center justify-content-center">
+                            <div *ngIf="loadingService.getLoading()" class="spinner-border mt-5" role="status"></div>
+                            <h3 class="text-center mt-5" *ngIf="searchService.getSearchResult().length == 0"> No hay
+                                datos
+                            </h3>
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-12  mb-2 mt-3 item"
+                                *ngFor="let item of searchService.getSearchResult(); let i = index">
+                                <app-product [item]="item"></app-product>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

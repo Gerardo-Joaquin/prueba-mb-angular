@@ -1,0 +1,49 @@
+.item-cart {
+    background: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .image {
+        width: 100px;
+    }
+    .description {
+        width: 20vw;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        .btn-flat {
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+        
+    }
+    .product-count {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .more {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .btn-flat {
+                padding: 3px;
+                border: 1px solid gray;
+            }
+        }
+    }
+    .current {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}

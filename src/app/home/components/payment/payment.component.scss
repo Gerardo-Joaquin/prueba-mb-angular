@@ -1,0 +1,94 @@
+@import '../../../../styles.scss';
+
+
+
+.filter {
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card {
+    border: none;
+    box-shadow: 9px 10px 19px -4px rgba(181, 181, 181, 0.75);
+    border-radius: 10px;
+}
+
+.container-fluid {
+    background: #F9F9FB;
+}
+
+.title-header {
+    background: white;
+    width: 100%;
+    padding: 20px;
+}
+
+.bar {
+    padding-left: 20px;
+    padding-right: 20px;
+    .line {
+        border-bottom: 2px solid rgba(128, 128, 128, 0.26);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.gird {
+    background: white;
+}
+
+.list-items {
+    .item {
+        margin-left: 10px;
+    }
+}
+
+.certify {
+    background: $primary-color;
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+
+    i {
+        margin-right: 5px;
+
+    }
+}
+
+
+.title-create {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 4px solid $primary-color;
+}
+
+.title-card {
+    font-size: 25px;
+}
+
+.section {
+    margin-top: 90px;
+}
+
+.btn-secondary {
+    padding: 14px 25px 14px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: black;
+        color: white;
+    }
+}
+
+.search-area {
+    height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
